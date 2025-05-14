@@ -1,0 +1,150 @@
+
+body {
+    background-color: #f8f9fc;
+    font-family: 'Inter', sans-serif;
+}
+
+.p-5 {
+    padding: 3rem !important;
+}
+
+.sidebar {
+    background-color: #ffffff;
+    color: #343a40;
+    min-height: 100vh;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding-top: 1.5rem;
+}
+
+.sidebar .avatar {
+    background-color: #f97316;
+    color: white;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.sidebar strong {
+    font-size: 1.1rem;
+    color: #111827;
+}
+
+.sidebar .text-muted {
+    font-size: 0.875rem;
+}
+
+.sidebar .nav-link {
+    color: #343a40;
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+}
+
+.sidebar .nav-link.active {
+    background-color: #f97316;
+    color: white;
+}
+
+.sidebar .btn-logout {
+    background-color: #ef4444;
+    color: white;
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    width: 100%;
+}
+
+
+.header {
+    color: #111827;
+}
+
+.header .greeting {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.header .subheading {
+    font-size: 1rem;
+    color: #6b7280;
+}
+
+
+.card {
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+}
+
+.card-body {
+    padding: 1.5rem 2rem;
+}
+
+.card .card-title {
+    color: #111827;
+}
+
+.card .card-text {
+    color: #6b7280;
+}
+
+
+.btn-primary {
+    background-color: #f97316;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #ea580c;
+}
+
+
+.login-card {
+    padding: 2rem !important;
+}
+
+.login-register-page .col-md-10 {
+    width: 100% !important;
+}
+
+.login-register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-register-card {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+@media (max-width: 768px) {
+    .login-register-card {
+        width: 90%;
+    }
+}
+
+a {
+    color: #f97316;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ea580c;
+    text-decoration: underline;
+}

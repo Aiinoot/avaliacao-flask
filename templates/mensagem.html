@@ -1,18 +1,37 @@
-<h2>Enviar Mensagem</h2>
-<form method="POST">
-    <label>Contato:</label>
-    <select name="contato_id" required>
-        {% for contato in contatos %}
-            <option value="{{ contato[0] }}">{{ contato[1] }}</option>
-        {% endfor %}
-    </select><br>
+{% extends 'base.html' %}
+{% block title %}Enviar Mensagem{% endblock %}
+{% block content %}
+<div class="container mt-4">
+    <h2 class="mb-4">Enviar Mensagem</h2>
 
-    <label>Título:</label>
-    <input type="text" name="titulo" value="{{ titulo or '' }}" required><br>
+    <form method="POST">
+        <!-- Contato -->
+        <div class="mb-3">
+            <label for="contato_id" class="form-label">Contato:</label>
+            <select name="contato_id" id="contato_id" class="form-select" required>
+                {% for contato in contatos %}
+                    <option value="{{ contato[0] }}">{{ contato[1] }}</option>
+                {% endfor %}
+            </select>
+        </div>
 
-    <label>Texto:</label>
-    <textarea name="texto" required>{{ texto or '' }}</textarea><br>
+        <!-- Título -->
+        <div class="mb-3">
+            <label for="titulo" class="form-label">Título:</label>
+            <input type="text" id="titulo" name="titulo" class="form-control" placeholder="Título" value="{{ titulo or '' }}" required>
+        </div>
 
-    <button type="submit">Enviar</button>
-</form>
-<a href="{{ url_for('home') }}">Voltar</a>
+        <!-- Texto -->
+        <div class="mb-3">
+            <label for="texto" class="form-label">Texto:</label>
+            <textarea id="texto" name="texto" class="form-control" placeholder="Digite sua mensagem..." rows="4" required>{{ texto or '' }}</textarea>
+        </div>
+
+        <!-- Botões -->
+        <div class="d-flex justify-content-between">
+            <button type="submit" class="btn btn-primary">Enviar</button>
+            <a href="{{ url_for('dashboard') }}" class="btn btn-secondary">Voltar</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

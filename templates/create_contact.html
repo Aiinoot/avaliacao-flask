@@ -1,21 +1,30 @@
 {% extends 'base.html' %}
-{% block title %}{{ 'Editar Contato' if editar else 'Novo Contato' }}{% endblock %}
+{% block title %}Novo Contato{% endblock %}
 {% block content %}
-<h2>{{ 'Editar Contato' if editar else 'Cadastrar Contato' }}</h2>
-<form method="POST">
-    <div class="mb-3">
-        <label>Nome:</label>
-        <input type="text" name="nome" placeholder="Nome" value="{{ contato.nome if editar else nome or '' }}" required>
-    </div>
-    <div class="mb-3">
-        <label>Email:</label>
-        <input type="email" name="email" placeholder="Email" value="{{ contato.email if editar else email or '' }}" required>
-    </div>
-    <div class="mb-3">
-        <label>Celular:</label>
-        <input type="text" name="celular" placeholder="Celular" value="{{ contato.celular if editar else celular or '' }}" required>
-    </div>
-    <button type="submit" class="btn btn-primary">{{ 'Atualizar' if editar else 'Salvar' }}</button>
-    <a href="{{ url_for('home') }}" class="btn btn-secondary">Cancelar</a>
-</form>
+<div class="container mt-4">
+    <h2 class="mb-4">{{ 'Editar Contato' if editar else 'Cadastrar Novo Contato' }}</h2>
+
+    <form method="POST">
+
+        <div class="mb-3">
+            <label for="nome" class="form-label">Nome:</label>
+            <input type="text" id="nome" name="nome" class="form-control" placeholder="Nome" value="{{ nome or '' }}" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="email" class="form-label">Email:</label>
+            <input type="email" id="email" name="email" class="form-control" placeholder="Email" value="{{ email or '' }}" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="celular" class="form-label">Celular:</label>
+            <input type="text" id="celular" name="celular" class="form-control" placeholder="Celular" value="{{ celular or '' }}" required>
+        </div>
+
+        <div class="d-flex justify-content-between">
+            <button type="submit" class="btn btn-primary">{{ 'Salvar' }}</button>
+            <a href="{{ url_for('contatos') }}" class="btn btn-secondary">Cancelar</a>
+        </div>
+    </form>
+</div>
 {% endblock %}

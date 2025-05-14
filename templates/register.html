@@ -1,28 +1,34 @@
 {% extends 'base.html' %}
+
 {% block title %}Cadastro{% endblock %}
+
 {% block content %}
-<h2>Cadastro</h2>
-<form method="POST">
-    <div class="mb-3">
-        <label>Nome:</label>
-        <input type="text" name="nome" placeholder="Nome" value="{{ nome or '' }}" required>
+<div class="login-register-container">
+    <div class="login-register-card">
+        <h2>Cadastro</h2>
+        <form method="POST">
+            <div class="mb-3">
+                <label>Nome:</label>
+                <input type="text" name="nome" placeholder="Nome" value="{{ nome or '' }}" required class="form-control">
+            </div>
+            <div class="mb-3">
+                <label>Email:</label>
+                <input type="email" name="email" placeholder="Email" value="{{ email or '' }}" required class="form-control">
+            </div>
+            <div class="mb-3">
+                <label>Celular:</label>
+                <input type="text" name="celular" placeholder="Celular" value="{{ celular or '' }}" required class="form-control">
+            </div>
+            <div class="mb-3">
+                <label>Senha:</label>
+                <input type="password" name="senha" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label>Confirmar Senha:</label>
+                <input type="password" name="confirmar" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+        </form>
     </div>
-    <div class="mb-3">
-        <label>Email:</label>
-        <input type="email" name="email" placeholder="Email" value="{{ email or '' }}" required>
-    </div>
-    <div class="mb-3">
-        <label>Celular:</label>
-        <input type="text" name="celular" placeholder="Celular" value="{{ celular or '' }}" required>
-    </div>
-    <div class="mb-3">
-        <label>Senha:</label>
-        <input type="password" name="senha" class="form-control" required>
-    </div>
-    <div class="mb-3">
-        <label>Confirmar Senha:</label>
-        <input type="password" name="confirmar" class="form-control" required>
-    </div>
-    <button type="submit" class="btn btn-primary">Cadastrar</button>
-</form>
+</div>
 {% endblock %}
