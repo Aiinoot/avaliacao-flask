@@ -1,0 +1,18 @@
+<h2>Enviar Mensagem</h2>
+<form method="POST">
+    <label>Contato:</label>
+    <select name="contato_id" required>
+        {% for contato in contatos %}
+            <option value="{{ contato[0] }}">{{ contato[1] }}</option>
+        {% endfor %}
+    </select><br>
+
+    <label>Título:</label>
+    <input type="text" name="titulo" value="{{ titulo or '' }}" required><br>
+
+    <label>Texto:</label>
+    <textarea name="texto" required>{{ texto or '' }}</textarea><br>
+
+    <button type="submit">Enviar</button>
+</form>
+<a href="{{ url_for('home') }}">Voltar</a>

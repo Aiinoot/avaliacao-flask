@@ -1,0 +1,25 @@
+<h2>Mensagens Enviadas</h2>
+<table border="1">
+    <tr>
+        <th>Para</th>
+        <th>Título</th>
+        <th>Texto</th>
+        <th>Data de Envio</th>
+        <th>Ações</th>
+    </tr>
+    {% for id, titulo, texto, data_envio, nome in mensagens %}
+    <tr>
+        <td>{{ nome }}</td>
+        <td>{{ titulo }}</td>
+        <td>{{ texto }}</td>
+        <td>{{ data_envio }}</td>
+        <td>
+            <a href="{{ url_for('editar_mensagem', id=id) }}">Editar</a>
+            <form action="{{ url_for('excluir_mensagem', id=id) }}" method="POST" style="display:inline;">
+                <button type="submit" onclick="return confirm('Tem certeza que deseja excluir?')">Excluir</button>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+<a href="{{ url_for('home') }}">Voltar</a>

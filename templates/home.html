@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block title %}Início{% endblock %}
+{% block content %}
+<h2>Meus Contatos</h2>
+<a href="{{ url_for('contato') }}" class="btn btn-success mb-3">Novo Contato</a>
+
+{% if contatos %}
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Celular</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for contato in contatos %}
+            <tr>
+            <td>{{ contato.nome }}</td>
+            <td>{{ contato.email }}</td>
+            <td>{{ contato.celular }}</td>
+            <td>
+                <a href="{{ url_for('editar_contato', contato_id=contato.id) }}">Editar</a> |
+                <a href="{{ url_for('excluir_contato', contato_id=contato.id) }}"
+                onclick="return confirm('Tem certeza?');">Excluir</a>
+            </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>Você ainda não tem contatos cadastrados.</p>
+{% endif %}
+
+<h2>Minhas Mensagens</h2>
+<a href="{{ url_for('mensagem') }}" class="btn btn-primary mb-3">Nova Mensagem</a>
+
+{% if mensagens %}
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Assunto</th>
+            <th>Data</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for mensagem in mensagens %}
+            <tr>
+            <td>{{ mensagem.assunto }}</td>
+            <td>{{ mensagem.data }}</td>
+            <td>{{ mensagem.status }}</td>
+            <td>
+                <a href="{{ url_for('visualizar_mensagem', mensagem_id=mensagem.id) }}">Ver</a> |
+                <a href="{{ url_for('excluir_mensagem', id=mensagem.id) }}"
+                onclick="return confirm('Tem certeza?');">Excluir</a>
+            </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>Você ainda não tem mensagens.</p>
+{% endif %}
+
+{% endblock %}

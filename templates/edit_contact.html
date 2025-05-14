@@ -1,0 +1,8 @@
+<h2>Editar Contato</h2>
+<form method="POST">
+    <input type="text" name="nome" placeholder="Nome" value="{{ nome }}" required><br>
+    <input type="email" name="email" placeholder="Email" value="{{ email }}" required><br>
+    <input type="text" name="celular" placeholder="Celular" value="{{ celular }}" required><br>
+    <button type="submit">Salvar</button>
+</form>
+<a href="{{ url_for('home') }}">Voltar</a>
